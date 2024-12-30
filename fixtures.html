@@ -3,37 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fixtures - Dodgeball Club</title>
+    <title>Fixtures - Dartmoor Beasts Dodgeball Club</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="fixtures.html">Fixtures</a></li>
-                <li><a href="committee.html">Meet the Committee</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-        <!-- Same navigation as index.html -->
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="./beastslogo2.jpg" alt="Dartmoor Beasts Logo" class="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fixtures.html">Fixtures</a></li>
+                    <li><a href="committee.html">Meet the Committee</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <h1>Upcoming Fixtures</h1>
-        <div id="fixtures-list">
-            <!-- Fixtures will be loaded here dynamically -->
-        </div>
+        <div id="fixtures-container"></div>
     </main>
 
     <footer>
-        <p>&copy; 2023 Dodgeball Club. All rights reserved.</p>
+        <p>&copy; 2023 Dartmoor Beasts Dodgeball Club. All rights reserved.</p>
     </footer>
 
-<!-- Add this before the closing </body> tag in all HTML files -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script type="module" src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
+
