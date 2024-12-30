@@ -10,7 +10,7 @@ const supabase = createClient(
 // Main function to run after Supabase is initialized
 async function main() {
     // ============ HOME PAGE FUNCTIONS ============
-    async function loadUpcomingFixtures() {
+    async function loadFixtures(isHomepage = false) {
         try {
             const { data, error } = await supabase
                 .from('fixtures')
@@ -32,13 +32,25 @@ async function main() {
                 fixturesByLeague[league].sort((a, b) => new Date(a.date) - new Date(b.date));
             });
 
-            displayFixtures(fixturesByLeague);
+            if (isHomepage) {
+                displayHomepageFixtures(fixturesByLeague);
+            } else {
+                displayAllFixtures(fixturesByLeague);
+            }
         } catch (error) {
             console.error('Error loading fixtures:', error);
         }
     }
 
-    function displayFixtures(fixturesByLeague) {
+    function displayHomepageFixtures(fixturesByLeague) {
+        const regionalFixtures = (fixturesByLeague['Regional'] || []).slice(0, 3);
+        const nationalFixtures = (fixturesByLeague['National'] || []).slice(0, 3);
+
+        displayFixtures('regional-fixtures', regionalFixtures);
+        displayFixtures('national-fixtures', nationalFixtures);
+    }
+
+    function displayAllFixtures(fixturesByLeague) {
         const fixturesContainer = $('#fixtures-container');
         fixturesContainer.empty();
 
@@ -67,6 +79,20 @@ async function main() {
             fixturesContainer.append(leagueSection);
         });
     }
+
+    function displayFixtures(containerId, fixtures) {
+        const fixtureHtml = fixtures.map(fixture => `
+            <div class="fixture">
+                <h4>${fixture.opponent}</h4>
+                <p>Date: ${new Date(fixture.date).toLocaleDateString()}</p>
+                <p>Time: ${fixture.time}</p>
+                <p>Location: ${fixture.location}</p>
+            </div>
+        `).join('');
+
+        $(`#${containerId}`).html(fixtureHtml);
+    }
+
 
     // ============ COMMITTEE PAGE FUNCTIONS ============
     async function loadCommitteeMembers() {
@@ -156,8 +182,10 @@ async function main() {
     // Determine which page we're on and load appropriate content
     const currentPage = window.location.pathname;
     
-    if (currentPage.includes('index.html') || currentPage === '/' || currentPage.includes('fixtures.html')) {
-        loadUpcomingFixtures();
+    if (currentPage.includes('index.html') || currentPage === '/') {
+        loadFixtures(true);  // Load fixtures for homepage
+    } else if (currentPage.includes('fixtures.html')) {
+        loadFixtures(false);  // Load all fixtures for fixtures page
     } else if (currentPage.includes('committee.html')) {
         loadCommitteeMembers();
     } else if (currentPage.includes('gallery.html')) {
