@@ -1,8 +1,8 @@
-// Wait for jQuery and Supabase to be loaded
+
 $(document).ready(function() {
     // Supabase Configuration
-    const SUPABASE_URL = 'YOUR_SUPABASE_PROJECT_URL';
-    const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+    const SUPABASE_URL = 'https://wjlmcjovstopwhsbcefp.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndqbG1jam92c3RvcHdoc2JjZWZwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU1NzkxOTcsImV4cCI6MjA1MTE1NTE5N30.q02gD7caKt-YAwtaa0b12O4dFZhghh2CcL4DYHYvenE';
     const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
     // ============ HOME PAGE FUNCTIONS ============
