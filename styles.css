@@ -35,6 +35,8 @@ header {
 .logo {
     width: 100%;
     height: auto;
+    border: 5px solid #FF0000;
+    border-radius: 50%;
 }
 
 nav ul {
