@@ -1,0 +1,167 @@
+:root {
+    --primary-black: #000000;
+    --primary-red: #FF0000;
+    --primary-grey: #808080;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-white);
+    color: var(--white);
+}
+
+header {
+    background-color: var(--primary-black);
+    border-bottom: 2px solid var(--primary-red);
+    padding: 1rem;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-container {
+    width: 150px;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-red);
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+    color: var(--primary-red);
+    text-transform: uppercase;
+}
+
+#upcoming-fixtures {
+    margin-top: 2rem;
+}
+
+.league-panel {
+    border: 1px solid var(--primary-grey);
+    margin-bottom: 1rem;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.league-header {
+    background-color: var(--primary-grey);
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.league-header:hover {
+    background-color: var(--primary-red);
+}
+
+.league-header h3 {
+    margin: 0;
+    color: var(--white);
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.league-fixtures {
+    display: none;
+    padding: 1rem;
+}
+
+.league-fixtures.active {
+    display: block;
+}
+
+.fixture {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--primary-grey);
+}
+
+.fixture:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.fixture h4 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+
+.fixture p {
+    color: var(--primary-grey);
+    margin: 0.3rem 0;
+}
+
+footer {
+    background-color: var(--primary-black);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    border-top: 2px solid var(--primary-red);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo-container {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    main {
+        padding: 1rem;
+    }
+}

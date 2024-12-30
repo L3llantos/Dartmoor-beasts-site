@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dartmoor Beasts Dodgeball Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="beastsLogo.png" alt="Dartmoor Beasts Logo" class="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="fixtures.html">Fixtures</a></li>
+                    <li><a href="committee.html">Meet the Committee</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="about-us">
+            <h1>Welcome to Dartmoor Beasts</h1>
+            <p>We are Devon's premier dodgeball club, bringing fierce competition and community spirit to the sport.</p>
+        </section>
+
+        <section id="upcoming-fixtures">
+            <h2>Upcoming Fixtures</h2>
+            <div class="league-panel">
+                <div class="league-header" data-league="regional">
+                    <h3>Regional League</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="league-fixtures" id="regional-fixtures"></div>
+            </div>
+            <div class="league-panel">
+                <div class="league-header" data-league="national">
+                    <h3>National League</h3>
+                    <span class="toggle-icon">+</span>
+                </div>
+                <div class="league-fixtures" id="national-fixtures"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Dartmoor Beasts Dodgeball Club. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>
